@@ -110,7 +110,7 @@ use GabrielDosAnjosBr\DomainEvents\BatchableEvent;
 class UserCreated extends Event implements BatchableEvent
 {
     public function __construct(
-        public readonly string $sourceId,
+        public readonly string $userId,
         public readonly \DateTimeImmutable $occurredAt = new \DateTimeImmutable('now'),
     ) {}
 }
