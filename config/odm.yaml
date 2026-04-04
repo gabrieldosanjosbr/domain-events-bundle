@@ -1,0 +1,6 @@
+services:
+  GabrielDosAnjosBr\DomainEvents\Doctrine\DocumentManager:
+    decorates: doctrine_mongodb.odm.document_manager
+    arguments:
+      $wrapped: '@GabrielDosAnjosBr\DomainEvents\Doctrine\DocumentManager.inner'
+      $collector: '@GabrielDosAnjosBr\DomainEvents\DomainEventCollector'

@@ -1,0 +1,6 @@
+services:
+  GabrielDosAnjosBr\DomainEvents\Doctrine\EntityManager:
+    decorates: doctrine.orm.default_entity_manager
+    arguments:
+      $wrapped: '@GabrielDosAnjosBr\DomainEvents\Doctrine\EntityManager.inner'
+      $collector: '@GabrielDosAnjosBr\DomainEvents\DomainEventCollector'
