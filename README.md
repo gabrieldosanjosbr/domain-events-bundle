@@ -38,9 +38,8 @@ class User implements AggregateRootInterface
 {
     use RaiseEventsTrait;
 
-    public function __construct( 
-        private string $id, 
-    ) {
+    public function __construct()
+    {
         $this->raise(new UserCreated($this->id));
     }
 }
