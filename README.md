@@ -33,6 +33,7 @@ Your entity/document must:
 ```php
 use GabrielDosAnjosBr\DomainEvents\AggregateRootInterface;
 use GabrielDosAnjosBr\DomainEvents\RaiseEventsTrait;
+use Symfony\Component\Uid\Uuid;
 
 class User implements AggregateRootInterface
 {
@@ -40,6 +41,7 @@ class User implements AggregateRootInterface
 
     public function __construct()
     {
+        $this->id = Uuid::v4()->toRfc4122();
         $this->raise(new UserCreated($this->id));
     }
 }
